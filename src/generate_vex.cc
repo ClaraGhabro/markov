@@ -1,17 +1,15 @@
-
 #include "generate_vex.hh"
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <random>
 
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <random>
+#include <string>
+
 
 
 /*
-
 int main(void)
 {
   Tile t1(1, 2, 3, 4);
@@ -24,9 +22,6 @@ int main(void)
 
   Puzzle p(2);
   std::cout << "get size: " << p.size_get() << '\n';
-
-
-
 
   p.add_tile(t1, 0, 0);
 

@@ -1,19 +1,21 @@
 CXX= g++
 SRC_DIR= src
 
-CXXFLAGS= -std=c++14 -pedantic -Wextra -Wall -Werror -g3 -ofast
+CXXFLAGS= -std=c++14 -pedantic -Wextra -Wall -Werror -g3 #-ofast
+LDFLAGS= -lboost_program_options
 
-SRC= main.cc generate_vex.cc
+SRC= main.cc generate_vex.cc parse_opt.cc
 SRC:= $(addprefix $(SRC_DIR)/, $(SRC))
 
-OBJ= ${SRC:.cc=.o}
+
+# OBJ= ${SRC:.cc=.o}
 
 PROJECT=epivex
 
 all: $(PROJECT)
 
-$(PROJECT): $(OBJ)
-	$(CXX) $(CXXFLAGS) $^ -o $@  -lboost_program_options
+$(PROJECT): $(SRC)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
 
 
 check: $(PROJECT)
@@ -22,7 +24,8 @@ check: $(PROJECT)
 
 clean:
 	$(RM) $(OBJ) $(PROJECT)
-	$(RM) *.vex
+	# $(RM) *.vex
+
 
 
 .PHONY: clean check
