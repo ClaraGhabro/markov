@@ -10,11 +10,15 @@
 class Puzzle
 {
   public:
-    Puzzle(unsigned s);
+    Puzzle();
+    Puzzle(unsigned size);
 //    ~Puzzle();
 
     unsigned size_get();
     void add_tile(Tile t/*, unsigned x, unsigned y*/);
+    void shuffle_me();
+    void solve_me();
+    int error(unsigned tile_pos);
 
     std::ostream& print_puzzle(std::ostream& o);
 

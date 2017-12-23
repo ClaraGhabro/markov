@@ -4,7 +4,7 @@
 
 inline Tile::Tile(int s, int e, int n, int w)
   : south_(s)
-  , est_(e)
+  , east_(e)
   , north_(n)
   , west_(w)
 {}
@@ -19,14 +19,14 @@ inline void Tile::south_set(int s)
   south_ = s;
 }
 
-inline int Tile::est_get()
+inline int Tile::east_get()
 {
-  return est_;
+  return east_;
 }
 
-inline void Tile::est_set(int e)
+inline void Tile::east_set(int e)
 {
-  est_ = e;
+  east_ = e;
 }
 
 
@@ -53,7 +53,7 @@ inline void Tile::west_set(int w)
 
 inline std::ostream& Tile::print_tile(std::ostream& o)
 {
-  o << south_ << " " << est_ << " " << north_ << " " << west_;
+  o << south_ << " " << east_ << " " << north_ << " " << west_;
 
   return o;
 }
