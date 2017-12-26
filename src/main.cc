@@ -8,8 +8,6 @@
 #include "parse_opt.hh"
 
 
-
-
 int main(int argc, char** argv)
 {
   Param parametre = parse_opt(argc, argv);
@@ -18,7 +16,6 @@ int main(int argc, char** argv)
     return 0;
 
   Puzzle puzzle;
-  std::cout << "le fichier out: " << parametre.output_get() << std::endl;
   if (parametre.input_get() == "no_input")
     puzzle = generate_vex(parametre);
   else
@@ -27,7 +24,10 @@ int main(int argc, char** argv)
   if (puzzle.size_get() == 0)
     return 1;
 
-  // puzzle->solve_me();
+  // puzzle.print_puzzle(std::cout);
+  std::cout << "empty befor solve_me: "
+            << puzzle.piece_get().empty() << std::endl;
+  puzzle.solve_me();
 
   return 0;
 }

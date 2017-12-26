@@ -25,10 +25,10 @@ Param parse_opt(int argc, char** argv)
     bpo::store(bpo::parse_command_line(argc, argv, desc), vm);
     bpo::notify(vm);
 
-    std::cout << "size: " << vm.count("size") << std::endl;
-    std::cout << "input: " << vm.count("input") << std::endl;
-    std::cout << "output: " << vm.count("output") << std::endl;
-    std::cout << "help: " << vm.count("help") << std::endl;
+    // std::cout << "size: " << vm.count("size") << std::endl;
+    // std::cout << "input: " << vm.count("input") << std::endl;
+    // std::cout << "output: " << vm.count("output") << std::endl;
+    // std::cout << "help: " << vm.count("help") << std::endl;
 
     std::string input;
 

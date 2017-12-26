@@ -7,13 +7,13 @@
 
 inline Puzzle::Puzzle()
   : size_(0)
-  , piece_()
+  , piece_{}
 {
 }
 
 inline Puzzle::Puzzle(unsigned size)
   : size_(size)
-  , piece_()
+  , piece_{}
 {
 }
 
@@ -22,23 +22,30 @@ inline unsigned Puzzle::size_get()
   return size_;
 }
 
+inline std::vector<Tile> Puzzle::piece_get()
+{
+  return piece_;
+}
+
 inline void Puzzle::add_tile(Tile t)
 {
   piece_.push_back(t);
+  std::cout << "taille apres add_tile: " << piece_.size() << std::endl;
 }
 
 inline void Puzzle::shuffle_me()
 {
+  std::cout << piece_[0] << std::endl;
   auto rng = std::default_random_engine {};
   std::shuffle(std::begin(piece_), std::end(piece_), rng);
+  std::cout << piece_[0] << std::endl;
 }
 
 
 inline std::ostream& Puzzle::print_puzzle(std::ostream& o)
 {
-  for (unsigned i = 0; i < this->size_; i++)
-    for (unsigned j = 0; j < this->size_; j++)
-      o << piece_[i * size_ + j] << std::endl;
+  o << piece_[0] << " " << piece_[1] << std::endl;
+  o << piece_[2] << " " << piece_[3] << std::endl;
 
   return o;
 }

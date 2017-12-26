@@ -15,6 +15,7 @@ public:
   //    ~Puzzle();
 
   unsigned size_get();
+  std::vector<Tile> piece_get();
   void add_tile(Tile t);
   void shuffle_me();
   void solve_me();

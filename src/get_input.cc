@@ -36,28 +36,29 @@ Puzzle get_input(Param parametre)
         if (*token[n] < '0' || *token [n] > '9')
           return Puzzle(0);
       }
+      // std::cout << "n: " << n << std::endl;
 
-      Puzzle puzzle(std::atoi(token[0]));
-      for (int i = 1; i < n - 4; i += 4)
+      if (n > 1)
       {
+        int i = 0;
         unsigned south = std::atoi(token[i]);
         unsigned east = std::atoi(token[i + 1]);
         unsigned north = std::atoi(token[i + 2]);
         unsigned west = std::atoi(token[i + 3]);
         Tile tile(south, east, north, west);
-
         puzzle.add_tile(tile);
+        // std::cout << "empty after add: " << puzzle.piece_get().empty() << std::endl;
       }
 
-      puzzle.shuffle_me();
-      // TODO segv apres le deuxieme tour de boucle
+      // std::cout << "empty after for: " << puzzle.piece_get().empty() << std::endl;
 
-      for (int i = 0; i < n; i++) // n = #of tokens
-        std::cout << "Token[" << i << "] = " << token[i] << std::endl;
-      std::cout << std::endl;
+      // for (int i = 0; i < n; i++) // n = #of tokens
+      // std::cout << "Token[" << i << "] = " << token[i] << std::endl;
+      // std::cout << std::endl;
     }
 
   }
+  puzzle.shuffle_me();
   ifs.close();
 
   return puzzle;
