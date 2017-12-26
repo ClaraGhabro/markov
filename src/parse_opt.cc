@@ -18,7 +18,7 @@ Param parse_opt(int argc, char** argv)
     ("output,o", bpo::value<std::string>()->default_value("out.vex"),
      "Generate/solve puzzle in file out.vex")
     ("input,i", bpo::value<std::string>(), "Solve puzzle in file in.vex")
-    ("size,s", bpo::value<int>()->default_value(2) , "Size of the tetravex");
+    ("size,s", bpo::value<int>(), "Size of the tetravex");
 
   try
   {
@@ -33,20 +33,17 @@ Param parse_opt(int argc, char** argv)
     std::string input;
 
     // Check combined options
-    if (vm.count("help"))
+    if (argc == 1 || vm.count("help") || !vm.count("size") || !vm.count("input"))
     {
       std::cout << desc << std::endl;
       return Param(0);
     }
+    else
+      input = vm["input"].as<std::string>();
 
-     if (!vm.count("input"))
-       input = "no_file";
-     else
-       input = vm["input"].as<std::string>();
-
-     Param parametre(input,
-                        vm["output"].as<std::string>(),
-                        vm["size"].as<int>());
+    Param parametre = Param(input,
+                    vm["output"].as<std::string>(),
+                    vm["size"].as<int>());
 
     return parametre;
   }

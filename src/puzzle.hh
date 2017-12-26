@@ -9,22 +9,29 @@
 
 class Puzzle
 {
-  public:
-    Puzzle();
-    Puzzle(unsigned size);
-//    ~Puzzle();
+public:
+  Puzzle();
+  Puzzle(unsigned size);
+  //    ~Puzzle();
 
-    unsigned size_get();
-    void add_tile(Tile t/*, unsigned x, unsigned y*/);
-    void shuffle_me();
-    void solve_me();
-    int error(unsigned tile_pos);
+  unsigned size_get();
+  void add_tile(Tile t);
+  void shuffle_me();
+  void solve_me();
 
-    std::ostream& print_puzzle(std::ostream& o);
+private:
+  void solve_me_2();
+  void solve_me_3();
+  void solve_me_4();
 
-  private:
-    unsigned size_;
-    std::vector<Tile> piece_;
+  int error(unsigned tile_pos);
+
+public:
+  std::ostream& print_puzzle(std::ostream& o);
+
+private:
+  unsigned size_;
+  std::vector<Tile> piece_;
 };
 
 std::ostream& operator<<(std::ostream& o, Puzzle p);

@@ -17,17 +17,17 @@ int main(int argc, char** argv)
   if (parametre.size_get() == 0)
     return 0;
 
-  if (parametre.size_get() == -1 || parametre.size_get() == -2)
-    return 1;
-
-  auto puzzle = std::make_unique<Puzzle>();
+  Puzzle puzzle;
   std::cout << "le fichier out: " << parametre.output_get() << std::endl;
   if (parametre.input_get() == "no_input")
     puzzle = generate_vex(parametre);
   else
     puzzle = get_input(parametre);
 
-  puzzle.solve_me();
+  if (puzzle.size_get() == 0)
+    return 1;
+
+  // puzzle->solve_me();
 
   return 0;
 }

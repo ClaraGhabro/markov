@@ -38,7 +38,7 @@ inline std::ostream& Puzzle::print_puzzle(std::ostream& o)
 {
   for (unsigned i = 0; i < this->size_; i++)
     for (unsigned j = 0; j < this->size_; j++)
-      o << piece_[i * size_ + j] << '\n';
+      o << piece_[i * size_ + j] << std::endl;
 
   return o;
 }

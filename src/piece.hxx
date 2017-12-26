@@ -2,50 +2,50 @@
 
 #include "piece.hh"
 
-inline Tile::Tile(int s, int e, int n, int w)
+inline Tile::Tile(unsigned s, unsigned e, unsigned n, unsigned w)
   : south_(s)
   , east_(e)
   , north_(n)
   , west_(w)
 {}
 
-inline int Tile::south_get()
+inline unsigned Tile::south_get()
 {
   return south_;
 }
 
-inline void Tile::south_set(int s)
+inline void Tile::south_set(unsigned s)
 {
   south_ = s;
 }
 
-inline int Tile::east_get()
+inline unsigned Tile::east_get()
 {
   return east_;
 }
 
-inline void Tile::east_set(int e)
+inline void Tile::east_set(unsigned e)
 {
   east_ = e;
 }
 
 
-inline int Tile::north_get()
+inline unsigned Tile::north_get()
 {
   return north_;
 }
 
-inline void Tile::north_set(int n)
+inline void Tile::north_set(unsigned n)
 {
   north_ = n;
 }
 
-inline int Tile::west_get()
+inline unsigned Tile::west_get()
 {
   return west_;
 }
 
-inline void Tile::west_set(int w)
+inline void Tile::west_set(unsigned w)
 {
   west_ = w;
 }
