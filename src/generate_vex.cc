@@ -54,6 +54,7 @@ Puzzle create_size_2(Param parametre)
     fs << parametre.size_get() << "\n" << puzzle;
   fs.close();
 
+  puzzle.shuffle_me();
   return puzzle;
 }
 
@@ -91,6 +92,7 @@ Puzzle create_size_3(Param parametre)
     fs << parametre.size_get() << "\n" << puzzle;
   fs.close();
 
+  puzzle.shuffle_me();
   return puzzle;
 }
 
@@ -148,6 +150,7 @@ Puzzle create_size_4(Param parametre)
 
   fs.close();
 
+  puzzle.shuffle_me();
   return puzzle;
 }
 

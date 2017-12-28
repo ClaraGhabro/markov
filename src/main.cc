@@ -24,10 +24,13 @@ int main(int argc, char** argv)
   if (puzzle.size_get() == 0)
     return 1;
 
-  // puzzle.print_puzzle(std::cout);
+  puzzle.print_puzzle(std::cout);
   std::cout << "empty befor solve_me: "
             << puzzle.piece_get().empty() << std::endl;
   puzzle.solve_me();
+
+  puzzle.print_puzzle(std::cout);
+  // puzzle.save_me();
 
   return 0;
 }

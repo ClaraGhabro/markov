@@ -35,17 +35,18 @@ inline void Puzzle::add_tile(Tile t)
 
 inline void Puzzle::shuffle_me()
 {
-  std::cout << piece_[0] << std::endl;
-  auto rng = std::default_random_engine {};
+  static auto rng = std::default_random_engine {};
   std::shuffle(std::begin(piece_), std::end(piece_), rng);
-  std::cout << piece_[0] << std::endl;
 }
 
 
 inline std::ostream& Puzzle::print_puzzle(std::ostream& o)
 {
-  o << piece_[0] << " " << piece_[1] << std::endl;
-  o << piece_[2] << " " << piece_[3] << std::endl;
+  // std::string north = "  " + piece_[0].north_get();
+  // north += "     " + piece_[1].north_get();
+  // o << north << std::endl;
+  o << piece_[0] << piece_[1] << std::endl;
+  o << piece_[2] << piece_[3] << std::endl;
 
   return o;
 }

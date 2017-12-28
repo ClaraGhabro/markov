@@ -53,7 +53,10 @@ inline void Tile::west_set(unsigned w)
 
 inline std::ostream& Tile::print_tile(std::ostream& o)
 {
-  o << south_ << " " << east_ << " " << north_ << " " << west_;
+  o << "  " << north_ << " " << "\n";
+  o << west_ << "   " << east_ << "\n";
+  o << "  " << south_ << " " << "\n";
+  // o << south_ << " " << east_ << " " << north_ << " " << west_;
 
   return o;
 }

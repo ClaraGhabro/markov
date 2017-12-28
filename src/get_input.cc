@@ -58,7 +58,9 @@ Puzzle get_input(Param parametre)
     }
 
   }
+  puzzle.print_puzzle(std::cout);
   puzzle.shuffle_me();
+  puzzle.print_puzzle(std::cout);
   ifs.close();
 
   return puzzle;
