@@ -26,9 +26,12 @@ private:
   void solve_me_4();
   void swap_elt(int pos_1, int pos_2);
 
+  int error(unsigned tile_pos);
   int error_2(unsigned tile_pos);
   // int error_3(unsigned tile_pos);
   // int error_4(unsigned tile_pos);
+  // int error_5(unsigned tile_pos);
+  // int error_6(unsigned tile_pos);
 
 public:
   std::ostream& print_puzzle(std::ostream& o);

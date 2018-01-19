@@ -8,3 +8,4 @@ Le but de ce proger est de resoudre un tetravex en utilisant les champs de
 Markov
 
 Make
+./epivex -i input.vex
