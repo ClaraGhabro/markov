@@ -37,6 +37,13 @@ public:
   std::ostream& print_puzzle(std::ostream& o);
 
 private:
+  std::ostream& print_puzzle_2(std::ostream& o);
+  std::ostream& print_puzzle_3(std::ostream& o);
+  std::ostream& print_puzzle_4(std::ostream& o);
+  // std::ostream& print_puzzle_5(std::ostream& o);
+  // std::ostream& print_puzzle_6(std::ostream& o);
+
+private:
   unsigned size_;
   std::vector<Tile> piece_;
 };

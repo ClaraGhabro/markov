@@ -26,8 +26,8 @@ void Puzzle::swap_elt(int pos_1, int pos_2)
 
 void Puzzle::solve_me()
 {
-  if (this->size_ == 2)
-    this->solve_me_2();
+  // if (this->size_ == 2)
+  this->solve_me_2();
   // else if (this->size_ == 3)
     // this->solve_me_3();
   // else if (this->size_ == 4)
@@ -39,7 +39,7 @@ void Puzzle::solve_me_2()
   std::random_device rd;
   std::mt19937 gen(rd());
   int err = 0;
-  int temperature = 100000;
+  float temperature = 100000;
   std::srand(std::time(0));
 
   int iteration = 0;
