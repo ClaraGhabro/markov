@@ -25,8 +25,6 @@ int main(int argc, char** argv)
     return 1;
 
   puzzle.print_puzzle(std::cout);
-  std::cout << "empty befor solve_me: "
-            << puzzle.piece_get().empty() << std::endl;
   puzzle.solve_me();
 
   puzzle.print_puzzle(std::cout);
