@@ -41,9 +41,9 @@ Puzzle get_input(Param parametre)
       if (n > 1)
       {
         int i = 0;
-        unsigned south = std::atoi(token[i]);
+        unsigned north = std::atoi(token[i]);
         unsigned east = std::atoi(token[i + 1]);
-        unsigned north = std::atoi(token[i + 2]);
+        unsigned south = std::atoi(token[i + 2]);
         unsigned west = std::atoi(token[i + 3]);
         Tile tile(south, east, north, west);
         puzzle.add_tile(tile);
