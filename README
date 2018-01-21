@@ -7,5 +7,14 @@
 Le but de ce proger est de resoudre un tetravex en utilisant les champs de
 Markov
 
-Make
-./epivex -i input.vex
+Pour lancer le projet :
+make
+./epivex -i input.vex -s puzzle_size
+
+format d'un fichier input.vex de taille de :
+
+size
+north east south west
+north east south west
+...
+...
