@@ -33,6 +33,8 @@ void Puzzle::solve_me()
   int err = 0;
   float temperature = 1000;
   std::srand(std::time(0));
+  std::uniform_int_distribution<int> pos_dist(0, size_ * size_ - 1);
+  std::uniform_real_distribution<float> dist(0.0f, 1.0f);
 
   int iteration_good = 0;
   int iteration_degradation = 0;
@@ -43,10 +45,10 @@ void Puzzle::solve_me()
 
   int tmp_error = 0;
 
-  while (temperature > 0.1 && err != 0)
+  while (temperature > 0.01 && err != 0)
   {
-    int pos_1 = std::rand() % (this->size_ * this->size_);
-    int pos_2 = std::rand() % (this->size_ * this->size_);
+    int pos_1 = pos_dist(gen);
+    int pos_2 = pos_dist(gen);
 
     if (pos_1 != pos_2)
     {
@@ -55,7 +57,6 @@ void Puzzle::solve_me()
       for (size_t i = 0; i < piece_.size(); ++i)
         tmp_error += this->error(i);
 
-      std::uniform_real_distribution<float> dist(0.0f, 1.0f);
       float alea = dist(gen);
       if (tmp_error < err)
       {
@@ -77,10 +78,11 @@ void Puzzle::solve_me()
       std::cout << "error: " << err << '\n' << std::endl;
 
       if ((iteration_good + iteration_degradation + nothing) % 40 == 0)
-        temperature *= 0.999;
+        temperature *= 0.997;
     }
   }
 
   std::cout << "iteration good:         " << iteration_good << '\n'
-            << "iteration degradation : " << iteration_degradation << std::endl;
+            << "iteration degradation : " << iteration_degradation << '\n'
+            << "doing noting: " << nothing << std::endl;
 }
